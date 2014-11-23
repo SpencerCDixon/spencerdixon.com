@@ -1,1 +1,4 @@
 <h1>Welcome To Spencer Dixon's Personal Website</h1>
+<%= link_to 'New user', new_user_registration_path, class: 'btn success' %>
+<%= link_to 'Sign In', new_user_session_path, class: 'btn info' %>
+<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn warning' %>
