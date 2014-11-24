@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SpencerDixon</title>
+  <title>Spencer Dixon</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <%= render 'layouts/nav' %>
+
+  <div class="container">
+    <% if flash.any? %>
+      <% if flash[:notice] %>
+        <p class="alert warning"><%= notice %></p>
+      <% end %>
+
+      <% if flash[:alert] %>
+        <p class="alert success"><%= alert %></p>
+      <% end -%>
+    <% end %>
+
+    <% if current_user && current_user.is_admin? %>
+      <%= link_to "All Users", admin_users_path, class: "btn info" %>
+      <%= link_to "All Posts", admin_posts_path, class: "btn info" %>
+      <%= link_to "New Post", new_admin_post_path, class: "btn success" %>
+    <% end -%>
+
+
+    <%= yield %>
+  </div>
 
 </body>
 </html>

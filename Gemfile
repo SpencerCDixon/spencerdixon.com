@@ -41,7 +41,6 @@ gem 'spring',        group: :development
 gem 'devise'
 
 group :development, :test do
-  gem 'rack-mini-profiler'
   gem 'valid_attribute'
   gem 'shoulda-matchers'
   gem 'pry-rails'
