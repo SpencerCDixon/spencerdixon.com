@@ -39,6 +39,8 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem 'redcarpet'
+gem 'pygments.rb'
 
 group :development, :test do
   gem 'valid_attribute'
