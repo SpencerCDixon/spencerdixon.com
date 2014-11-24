@@ -7,7 +7,7 @@
   <li>
     <h1> <%= post.title %> </h1>
     <p> <%= post.created_at.strftime("%B %d, %Y at %l%p")  %></p>
-    <p class="alert success"> <%= post.body %> </p>
+    <%= markdown post.body %>
     <p> Written by: <%= post.user.full_name %> </p>
   </li>
 <% end -%>
