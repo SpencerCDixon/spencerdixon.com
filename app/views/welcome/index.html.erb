@@ -5,8 +5,10 @@
 <ul>
 <% @posts.each do |post| %>
   <li>
-    <p> <%= post.title %> </p>
+    <h1> <%= post.title %> </h1>
+    <p> <%= post.created_at.strftime("%B %d, %Y at %l%p")  %></p>
     <p class="alert success"> <%= post.body %> </p>
+    <p> Written by: <%= post.user.full_name %> </p>
   </li>
 <% end -%>
 </ul>

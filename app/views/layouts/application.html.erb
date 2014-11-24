@@ -20,6 +20,7 @@
         <p class="alert success"><%= alert %></p>
       <% end -%>
     <% end %>
+
     <% if current_user && current_user.is_admin? %>
       <%= link_to "All Users", admin_users_path, class: "btn info" %>
       <%= link_to "All Posts", admin_posts_path, class: "btn info" %>

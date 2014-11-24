@@ -1,6 +1,6 @@
 <nav class="nav-inverse">
   <div class="brand">
-    <h1> Spencer Dixon </h1>
+    <h1> &lt; Spencer Dixon &gt; </h1>
   </div>
   <ul>
     <% if current_user %>
@@ -11,9 +11,6 @@
     <% end -%>
 
     <li><a href="/" class="active"> Home  </a></li>
-    <% if current_user && current_user.is_admin?%>
-      <li><%= link_to 'New Post', new_admin_post_path %></li>
-    <% end -%>
   </ul>
 </nav>
 

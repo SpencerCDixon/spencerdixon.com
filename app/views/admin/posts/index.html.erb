@@ -3,12 +3,16 @@
 <table>
   <tr>
     <th>Title</th>
+    <th>Created At</th>
+    <th>Last Updated</th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
   <% @posts.each do |post| %>
   <tr>
     <td> <%= post.title %></td>
+    <td> <%= post.created_at.strftime("%B %d, %Y at %l%p") %></td>
+    <td> <%= post.updated_at.strftime("%B %d, %Y at %l%p") %></td>
     <td> <%= link_to "Edit", edit_admin_post_path(post), class: "btn warning" %>  </td>
     <td> <%= link_to "Delete", admin_post_path(post), class: "btn danger", method: :delete, data: {confirm: "are you sure?"} %>  </td>
   <tr>
