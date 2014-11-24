@@ -1,4 +1,12 @@
 <h1>Welcome To Spencer Dixon's Personal Website</h1>
-<%= link_to 'New user', new_user_registration_path, class: 'btn success' %>
-<%= link_to 'Sign In', new_user_session_path, class: 'btn info' %>
-<%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn warning' %>
+
+
+<h1>Recent Posts</h1>
+<ul>
+<% @posts.each do |post| %>
+  <li>
+    <p> <%= post.title %> </p>
+    <p class="alert success"> <%= post.body %> </p>
+  </li>
+<% end -%>
+</ul>

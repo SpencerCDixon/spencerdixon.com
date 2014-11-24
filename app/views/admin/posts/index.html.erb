@@ -1,0 +1,16 @@
+<h1 id="all_posts">All Posts</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @posts.each do |post| %>
+  <tr>
+    <td> <%= post.title %></td>
+    <td> <%= link_to "Edit", edit_admin_post_path(post), class: "btn warning" %>  </td>
+    <td> <%= link_to "Delete", admin_post_path(post), class: "btn danger", method: :delete, data: {confirm: "are you sure?"} %>  </td>
+  <tr>
+  <% end -%>
+</table>
