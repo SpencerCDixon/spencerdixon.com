@@ -1,0 +1,12 @@
+<h1 id="edit_post">Edit Post</h1>
+<%= form_for [:admin, @post], html: {class: "ninja"} do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+
+  <%= f.submit 'Edit Post', class: "btn success" %>
+
+<% end -%>

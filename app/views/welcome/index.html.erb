@@ -1,0 +1,14 @@
+<h1>Welcome To Spencer Dixon's Personal Website</h1>
+
+
+<h1>Recent Posts</h1>
+<ul>
+<% @posts.each do |post| %>
+  <li>
+    <h1> <%= post.title %> </h1>
+    <p> <%= post.created_at.strftime("%B %d, %Y at %l%p")  %></p>
+    <p class="alert success"> <%= post.body %> </p>
+    <p> Written by: <%= post.user.full_name %> </p>
+  </li>
+<% end -%>
+</ul>
