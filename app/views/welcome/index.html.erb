@@ -1,4 +1,11 @@
 <h1>Welcome To Spencer Dixon's Personal Website</h1>
+<p>This is an ever evolving project of mine. A place to experiment with new technologies and showcase some of my work.
+
+My mission in life is to do everything in my power to live up to my full potential and help as many people as possible along the way. This website will act as a medium to share my story. To display my successes and my failures.
+
+I was inspired to start this website by a good friend of mine Sam Shames. A dream come true for me would be for this website to someday inspire others.
+
+If there is anyway I can add value to your life please feel free to contact me at: spencercdixon@gmail.com</p>
 <h1>Tags</h1>
 <p>
   <% @tags.each do |tag| %>
@@ -7,10 +14,10 @@
 </p>
 
 <h1>Recent Posts</h1>
-<ul>
+<ul class="posts">
 <% @posts.each do |post| %>
   <li>
-    <h1> <%= post.title %> </h1>
+    <h1> <%= link_to post.title, post_path(post) %> </h1>
     <p> <%= post.created_at.strftime("%B %d, %Y at %l%p")  %></p>
     <%= markdown post.body %>
     <p> Written by: <%= post.user.full_name %> </p>

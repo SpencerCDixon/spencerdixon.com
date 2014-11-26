@@ -7,4 +7,8 @@ class WelcomeController < ApplicationController
     end
     @tags = Tag.all
   end
+
+  def show
+    @post = Post.find(params[:format])
+  end
 end
