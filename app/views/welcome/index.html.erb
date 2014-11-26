@@ -1,5 +1,10 @@
 <h1>Welcome To Spencer Dixon's Personal Website</h1>
-
+<h1>Tags</h1>
+<p>
+  <% @tags.each do |tag| %>
+   <a href="?tag=<%= tag.name %>" class="btn info sml"> <%= tag.name %></a>
+  <% end %>
+</p>
 
 <h1>Recent Posts</h1>
 <ul>
@@ -9,6 +14,11 @@
     <p> <%= post.created_at.strftime("%B %d, %Y at %l%p")  %></p>
     <%= markdown post.body %>
     <p> Written by: <%= post.user.full_name %> </p>
+    <p>
+      <% post.tags.each do |tag|  %>
+        <a href="?tag=<%= tag.name %>" class="tags"> <%= tag.name %> </a>
+      <% end -%>
+    </p>
   </li>
 <% end -%>
 </ul>
