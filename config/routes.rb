@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:index]
-    resources :posts
+    resources :posts, except: [:show]
   end
+  match 'post', to: 'welcome#show', via: [:get]
 end

@@ -1,0 +1,10 @@
+<h1> Post: <%= @post.title %></h1>
+<p> <%= @post.created_at.strftime("%B %d, %Y at %l%p")  %></p>
+  <%= markdown @post.body %>
+<p> Written by: <%= @post.user.full_name %> </p>
+
+<p>
+  <% @post.tags.each do |tag|  %>
+    <a href="/?tag=<%= tag.name %>" class="tags"> <%= tag.name %> </a>
+  <% end -%>
+</p>

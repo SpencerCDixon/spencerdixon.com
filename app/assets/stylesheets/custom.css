@@ -1,0 +1,8 @@
+ul.posts {
+  list-style: none;
+}
+
+ul.posts li h1 {
+  color:  #55b2e9;
+}
+
