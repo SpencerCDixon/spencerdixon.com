@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem 'redcarpet'
 gem 'pygments.rb'
+gem 'rails_12factor', group: :production
 
 group :development, :test do
   gem 'valid_attribute'

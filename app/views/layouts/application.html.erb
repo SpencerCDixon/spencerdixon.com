@@ -24,7 +24,9 @@
     <% if current_user && current_user.is_admin? %>
       <%= link_to "All Users", admin_users_path, class: "btn info" %>
       <%= link_to "All Posts", admin_posts_path, class: "btn info" %>
+      <%= link_to "All Goals", admin_goals_path, class: "btn info" %>
       <%= link_to "New Post", new_admin_post_path, class: "btn success" %>
+      <%= link_to "New Goal", new_admin_goal_path, class: "btn success" %>
     <% end -%>
 
     <%= yield %>

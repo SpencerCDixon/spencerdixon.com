@@ -3,6 +3,10 @@ class Post < ActiveRecord::Base
   has_many :tags, through: :taggings
   belongs_to :user
 
+  validates :user_id, presence: true
+  validates :title, presence: true
+  validates :body, presence: true
+
   after_create :persist_tags
 
   def self.tagged_with(name)

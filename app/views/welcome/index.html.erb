@@ -9,9 +9,16 @@ If there is anyway I can add value to your life please feel free to contact me a
 <h1>Tags</h1>
 <p>
   <% @tags.each do |tag| %>
-   <a href="?tag=<%= tag.name %>" class="btn info sml"> <%= tag.name %></a>
+   <a href="?tag=<%= tag.name %>" class="btn info tagsize"> <%= tag.name %></a>
   <% end %>
 </p>
+
+<h1>Goals</h1>
+<ol>
+  <% @goals.each do |goal| %>
+    <li> <%= goal.name %> .......... Will be done by: <%= goal.due_date.strftime("%B %d, %Y at %l%p")  %></li>
+  <% end -%>
+</ol>
 
 <h1>Recent Posts</h1>
 <ul class="posts">
@@ -23,7 +30,7 @@ If there is anyway I can add value to your life please feel free to contact me a
     <p> Written by: <%= post.user.full_name %> </p>
     <p>
       <% post.tags.each do |tag|  %>
-        <a href="?tag=<%= tag.name %>" class="tags"> <%= tag.name %> </a>
+        <a href="?tag=<%= tag.name %>" class="btn danger tagsize"> <%= tag.name %> </a>
       <% end -%>
     </p>
   </li>

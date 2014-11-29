@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129004640) do
+ActiveRecord::Schema.define(version: 20141129221106) do
+
+  create_table "goals", force: true do |t|
+    t.integer  "user_id",                                        null: false
+    t.string   "name",                                           null: false
+    t.datetime "start_date",     default: '2014-11-29 23:04:11', null: false
+    t.datetime "due_date",                                       null: false
+    t.boolean  "complete?",      default: false,                 null: false
+    t.datetime "completed_date"
+  end
 
   create_table "posts", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",    null: false
     t.string   "title",      null: false
     t.text     "body",       null: false
     t.datetime "created_at"
@@ -22,8 +31,8 @@ ActiveRecord::Schema.define(version: 20141129004640) do
   end
 
   create_table "taggings", force: true do |t|
-    t.integer  "tag_id"
-    t.integer  "post_id"
+    t.integer  "tag_id",     null: false
+    t.integer  "post_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -32,7 +41,7 @@ ActiveRecord::Schema.define(version: 20141129004640) do
   add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
 
   create_table "tags", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
