@@ -13,11 +13,11 @@
   <div class="container">
     <% if flash.any? %>
       <% if flash[:notice] %>
-        <p class="alert warning"><%= notice %></p>
+        <p class="alert success"><%= notice %></p>
       <% end %>
 
       <% if flash[:alert] %>
-        <p class="alert success"><%= alert %></p>
+        <p class="alert danger"><%= alert %></p>
       <% end -%>
     <% end %>
 
@@ -26,7 +26,6 @@
       <%= link_to "All Posts", admin_posts_path, class: "btn info" %>
       <%= link_to "New Post", new_admin_post_path, class: "btn success" %>
     <% end -%>
-
 
     <%= yield %>
   </div>
