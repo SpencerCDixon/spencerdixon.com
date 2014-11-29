@@ -8,9 +8,8 @@
   <%= f.label :body %>
   <%= f.text_area :body %>
 
-  <p>Tags: comma separated</p>
   <%= f.label :tag_string %>
-  <%= f.text_area :tag_string %>
+  <%= f.text_field :tag_string %>
 
   <%= f.submit 'Create Post', class: "btn success" %>
 <% end -%>

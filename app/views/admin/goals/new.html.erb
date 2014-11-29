@@ -1,0 +1,15 @@
+<h1 id="new_goal">New Goal</h1>
+
+<%= form_for [:admin, @goal], html: { class: 'ninja' } do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :start_date %>
+  <%= f.datetime_select :start_date, :ampm => true, :minute_step => 15 %>
+
+  <%= f.label :due_date %>
+  <%= f.datetime_select :due_date, :ampm => true, :minute_step => 15 %>
+
+  <%= f.submit 'Create Goal', class: "btn success" %>
+<% end -%>

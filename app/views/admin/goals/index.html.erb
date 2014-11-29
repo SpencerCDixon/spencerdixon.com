@@ -1,0 +1,24 @@
+<h1 id="all_goals">All Goals</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Start Date</th>
+    <th>Due Date</th>
+    <th>Completed? </th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <% @goals.each do |goal| %>
+  <tr>
+    <td> <%= goal.user_id %></td>
+    <td> <%= goal.name %></td>
+    <td> <%= goal.start_date.strftime("%B %d, %Y at %l%p") %></td>
+    <td> <%= goal.due_date.strftime("%B %d, %Y at %l%p") %></td>
+    <td> <%= goal.complete? %></td>
+    <td> <%= link_to "Edit", edit_admin_goal_path(goal), class: "btn warning" %>  </td>
+    <td> <%= link_to "Delete", admin_goal_path(goal), class: "btn danger", method: :delete, data: {confirm: "are you sure?"} %>  </td>
+  <tr>
+  <% end -%>
+</table>

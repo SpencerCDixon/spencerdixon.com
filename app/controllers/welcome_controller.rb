@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
       @posts = Post.all
     end
     @tags = Tag.all
+    @goals = Goal.all
   end
 
   def show
