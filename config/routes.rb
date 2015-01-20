@@ -7,5 +7,8 @@ Rails.application.routes.draw do
     resources :posts, except: [:show]
     resources :goals
   end
-  match 'post', to: 'welcome#show', via: [:get]
+  match '/post', to: 'welcome#show', via: [:get]
+
+  match '/contacts',     to: 'contacts#new',             via: 'get'
+  resources "contacts", only: [:new, :create]
 end
