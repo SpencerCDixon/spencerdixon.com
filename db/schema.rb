@@ -13,10 +13,13 @@
 
 ActiveRecord::Schema.define(version: 20141129221106) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "goals", force: true do |t|
     t.integer  "user_id",                                        null: false
     t.string   "name",                                           null: false
-    t.datetime "start_date",     default: '2014-11-29 23:04:11', null: false
+    t.datetime "start_date",     default: '2014-12-01 16:59:05', null: false
     t.datetime "due_date",                                       null: false
     t.boolean  "complete?",      default: false,                 null: false
     t.datetime "completed_date"
@@ -37,8 +40,8 @@ ActiveRecord::Schema.define(version: 20141129221106) do
     t.datetime "updated_at"
   end
 
-  add_index "taggings", ["post_id"], name: "index_taggings_on_post_id"
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", ["post_id"], name: "index_taggings_on_post_id", using: :btree
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
 
   create_table "tags", force: true do |t|
     t.string   "name",       null: false
@@ -64,7 +67,7 @@ ActiveRecord::Schema.define(version: 20141129221106) do
     t.string   "last_name"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

@@ -38,6 +38,8 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'simple_form'
+gem 'mail_form'
 gem 'devise'
 gem 'redcarpet'
 gem 'pygments.rb'
